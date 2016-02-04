@@ -1,14 +1,14 @@
 package ir.farhadfaghihi.juicyinsta;
 
-import android.content.DialogInterface;
 import android.view.View;
+
 import ir.farhadfaghihi.juicyinsta.activity.AuthActivity;
 import ir.farhadfaghihi.juicyinsta.dialog.AuthWarningDialog;
 
 /**
  * Created by Farhad on 2/3/2016.
  */
-public class AuthPresenter implements View.OnClickListener,DialogInterface.OnClickListener
+public class AuthPresenter implements View.OnClickListener
 {
     private AuthActivity activity ;
 
@@ -24,15 +24,24 @@ public class AuthPresenter implements View.OnClickListener,DialogInterface.OnCli
         {
             case R.id.auth_btn_login :
             {
-                AuthWarningDialog.getInstance(activity).show(this,this);
+                new AuthWarningDialog(activity,this,this).show();
+
+                break;
+            }
+
+            case R.id.dlg_auth_btnPositive :
+            {
+                
+                break;
+            }
+
+            case R.id.dlg_auth_btnNegative :
+            {
+
                 break;
             }
 
         }
     }
 
-    @Override
-    public void onClick(DialogInterface dialog, int which)
-    {
-    }
 }
