@@ -2,17 +2,17 @@ package ir.farhadfaghihi.juicyinsta.splash.mvp;
 
 import ir.farhadfaghihi.juicyinsta.splash.handler.ISplashPresenter;
 import ir.farhadfaghihi.juicyinsta.splash.handler.OnCheckCredentialsListener;
-import ir.farhadfaghihi.juicyinsta.splash.handler.SplashView;
+import ir.farhadfaghihi.juicyinsta.splash.handler.ISplashView;
 
 /**
  * Created by Farhad on 2/4/2016.
  */
 public class SplashPresenter implements ISplashPresenter,OnCheckCredentialsListener
 {
-    private SplashView splashViewListener ;
+    private ISplashView splashViewListener ;
     private SplashInteractor splashInteractor ;
 
-    public SplashPresenter(SplashView splashViewListener)
+    public SplashPresenter(ISplashView splashViewListener)
     {
         this.splashViewListener = splashViewListener ;
         this.splashInteractor = new SplashInteractor() ;

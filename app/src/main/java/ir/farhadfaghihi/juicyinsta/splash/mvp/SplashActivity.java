@@ -8,10 +8,10 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import ir.farhadfaghihi.juicyinsta.R;
-import ir.farhadfaghihi.juicyinsta.splash.handler.SplashView;
+import ir.farhadfaghihi.juicyinsta.splash.handler.ISplashView;
 import ir.farhadfaghihi.juicyinsta.utils.JuicyIntents;
 
-public class SplashActivity extends AppCompatActivity implements SplashView
+public class SplashActivity extends AppCompatActivity implements ISplashView
 {
     @Bind(R.id.splash_imageview)  ImageView ivLogo;
     @Bind(R.id.splash_tvAppName)  TextView tvAppName;
