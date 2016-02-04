@@ -24,4 +24,13 @@
         <item name="android:background">@color/white</item>
     </style>
 
+    <style name="TextViewLarge">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/textsize_large</item>
+        <item name="android:padding">@dimen/padding_large</item>
+    </style>
+
 </resources>

@@ -10,9 +10,16 @@ import ir.farhadfaghihi.juicyinsta.activity.AuthActivity;
  */
 public class JuicyIntents
 {
-    public static void openAuthActivity(Context context)
+    public static void startAuthFlow(Context context)
     {
         Intent intentAuth = new Intent(context,AuthActivity.class);
         context.startActivity(intentAuth);
+    }
+
+    public static void showUserProfile(Context context)
+    {
+        /**
+         * Todo : show user profile activity
+         */
     }
 }
