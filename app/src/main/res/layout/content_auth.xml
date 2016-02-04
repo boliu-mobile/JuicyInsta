@@ -1,9 +1,40 @@
-<fragment android:id="@+id/fragment"
-          android:name="ir.farhadfaghihi.juicyinsta.activity.AuthActivityFragment"
-          xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:app="http://schemas.android.com/apk/res-auto"
-          xmlns:tools="http://schemas.android.com/tools"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          app:layout_behavior="@string/appbar_scrolling_view_behavior"
-          tools:layout="@layout/fragment_auth"/>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:context=".fragment.AuthActivityFragment"
+                tools:showIn="@layout/activity_auth">
+
+    <LinearLayout
+        android:id="@+id/auth_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/auth_tvInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/frg_auth_info"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="14sp"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/auth_btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_btn_blue"
+            android:textColor="@color/white"
+            android:text="@string/frg_auth_btn_login"
+            android:padding="10dp"
+            android:textAllCaps="false"
+            android:minEms="12"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

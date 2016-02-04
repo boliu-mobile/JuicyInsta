@@ -2,4 +2,16 @@
     <string name="app_name">JuicyInsta</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_auth">AuthActivity</string>
+
+
+    <!-- Authentication -->
+    <string name="frg_auth_info">Wanna see your Instagram profile here ?</string>
+    <string name="frg_auth_btn_login">Login with Instagram</string>
+
+    <string name="dlg_auth_warning_title">Choose your browser</string>
+    <string name="dlg_auth_warning_message">We need you to login-in to your Instagram account in a web browser.\n
+                                            You may use the Juicy application web browser (OK) or your device\'s default browser (CANCEL)</string>
+    
+    <string name="dlg_auth_warning_btn_ok">Ok</string>
+    <string name="dlg_auth_warning_btn_cancel">Cancel</string>
 </resources>
