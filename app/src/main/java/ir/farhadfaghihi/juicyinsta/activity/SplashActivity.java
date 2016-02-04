@@ -1,15 +1,15 @@
-package ir.farhadfaghihi.juicyinsta;
+package ir.farhadfaghihi.juicyinsta.activity;
 
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 
+import ir.farhadfaghihi.juicyinsta.R;
 import ir.farhadfaghihi.juicyinsta.utils.JuicyIntents;
 
 public class SplashActivity extends AppCompatActivity
 {
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
