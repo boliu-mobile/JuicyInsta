@@ -77,7 +77,9 @@ public class AuthPresenter implements IAuthPresenter,OnAuthListener
     @Override
     public void onAuthFailed()
     {
+        authView.hideAllViews();
 
+        authView.showFailedAuthMessage();
     }
 
     @Override

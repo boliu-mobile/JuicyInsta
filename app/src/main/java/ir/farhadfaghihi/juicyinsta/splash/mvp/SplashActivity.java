@@ -9,7 +9,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import ir.farhadfaghihi.juicyinsta.R;
 import ir.farhadfaghihi.juicyinsta.splash.handler.ISplashView;
-import ir.farhadfaghihi.juicyinsta.utils.JuicyIntents;
+import ir.farhadfaghihi.juicyinsta.utils.intents.JuicyIntents;
 
 public class SplashActivity extends AppCompatActivity implements ISplashView
 {

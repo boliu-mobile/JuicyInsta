@@ -20,7 +20,7 @@ import butterknife.ButterKnife;
 import ir.farhadfaghihi.juicyinsta.R;
 import ir.farhadfaghihi.juicyinsta.authentication.handler.IAuthPresenter;
 import ir.farhadfaghihi.juicyinsta.authentication.handler.IAuthView;
-import ir.farhadfaghihi.juicyinsta.utils.JuicyIntents;
+import ir.farhadfaghihi.juicyinsta.utils.intents.JuicyIntents;
 import ir.farhadfaghihi.juicyinsta.widget.InstaAuthWebViewClient;
 
 public class AuthActivity extends AppCompatActivity implements IAuthView, View.OnClickListener

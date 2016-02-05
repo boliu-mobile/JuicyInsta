@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".user.mvp.ProfileActivity"
+    tools:showIn="@layout/activity_profile">
+
+    <RelativeLayout
+        android:id="@+id/profile_relative_avatar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/profile_imageview_avatar"
+            android:layout_width="@dimen/image_user_avatar"
+            android:layout_height="@dimen/image_user_avatar"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="@dimen/margin_large"
+            android:src="@drawable/avatar_default"
+            android:scaleType="fitCenter"/>
+
+        <LinearLayout
+            android:id="@+id/profile_linear_userdata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_large"
+            android:layout_toRightOf="@+id/profile_imageview_avatar"
+            android:gravity="left|center_vertical"
+            android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/profile_tvUserFullName"
+            style="@style/TextViewLarge"
+            android:textStyle="normal"
+            android:padding="@dimen/padding_small"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/profile_tvUserBio"
+            style="@style/TextViewMedium"
+            android:textStyle="normal"
+            android:padding="@dimen/padding_small"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/profile_frame_profiledata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_relative_avatar">
+
+        <LinearLayout
+            android:id="@+id/profile_linear_profiledata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/profile_tvPostCount"
+                style="@style/TextViewMedium"
+                android:layout_weight="1"
+                android:textStyle="normal"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/profile_tvFollowers"
+                style="@style/TextViewMedium"
+                android:layout_weight="1"
+                android:textStyle="normal"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/profile_tvFollowing"
+                style="@style/TextViewMedium"
+                android:layout_weight="1"
+                android:textStyle="normal"/>
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/profile_progress_userdata"
+            android:layout_width="@dimen/image_user_avatar"
+            android:layout_height="@dimen/image_user_avatar"
+            android:layout_gravity="center"/>
+
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/primary"
+        android:layout_below="@+id/profile_frame_profiledata"/>
+
+
+</RelativeLayout>

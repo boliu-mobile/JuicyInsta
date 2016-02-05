@@ -1,4 +1,4 @@
-package ir.farhadfaghihi.juicyinsta.utils;
+package ir.farhadfaghihi.juicyinsta.utils.intents;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.widget.Toast;
 
 import ir.farhadfaghihi.juicyinsta.authentication.mvp.AuthActivity;
+import ir.farhadfaghihi.juicyinsta.user.mvp.ProfileActivity;
 
 /**
  * Created by Farhad on 2/3/2016.
@@ -21,9 +22,8 @@ public class JuicyIntents
 
     public static void showUserProfile(Context context)
     {
-        /**
-         * Todo : show user profile activity
-         */
+        Intent intentUserProfile = new Intent(context, ProfileActivity.class);
+        context.startActivity(intentUserProfile);
     }
 
     public static void showPhoneBrowser(Context context,Uri uri)

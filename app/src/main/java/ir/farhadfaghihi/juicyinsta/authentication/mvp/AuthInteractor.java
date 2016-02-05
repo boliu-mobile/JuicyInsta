@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import ir.farhadfaghihi.juicyinsta.authentication.handler.IAuthInteractor;
 import ir.farhadfaghihi.juicyinsta.authentication.handler.OnAuthListener;
 import ir.farhadfaghihi.juicyinsta.utils.setting.AppSetting;
-import ir.farhadfaghihi.juicyinsta.utils.UrlUtils;
+import ir.farhadfaghihi.juicyinsta.utils.network.URLUtils;
 import ir.farhadfaghihi.juicyinsta.utils.setting.ConstSetting;
 
 /**
@@ -18,13 +18,13 @@ public class AuthInteractor implements IAuthInteractor
     @Override
     public String getInstagramAuthUrl()
     {
-        return UrlUtils.getInstagramAuthUrl() ;
+        return URLUtils.getInstagramAuthUrl() ;
     }
 
     @Override
     public void checAuthCalllback(Uri uriCallback, OnAuthListener onAuthListener)
     {
-        String token = UrlUtils.extractAccessToken(uriCallback);
+        String token = URLUtils.extractAccessToken(uriCallback);
 
         if(!TextUtils.isEmpty(token))
         {

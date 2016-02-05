@@ -1,11 +1,13 @@
-package ir.farhadfaghihi.juicyinsta.utils;
+package ir.farhadfaghihi.juicyinsta.utils.network;
 
 import android.net.Uri;
+
+import ir.farhadfaghihi.juicyinsta.network.model.ConstsApi;
 
 /**
  * Created by Farhad on 2/1/2016.
  */
-public class UrlUtils
+public class URLUtils
 {
     /**
      * Extract the acccesstoken from the redirect_url after
