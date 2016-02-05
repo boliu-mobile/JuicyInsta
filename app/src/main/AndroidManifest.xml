@@ -2,6 +2,8 @@
 <manifest package="ir.farhadfaghihi.juicyinsta"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,9 +22,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.AuthActivity"
-            android:label="@string/title_activity_auth"
+            android:name=".authentication.mvp.AuthActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
             android:theme="@style/AppTheme.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data
+                    android:host="juicyinsta.com"
+                    android:path="/auth/"
+                    android:scheme="juicyinsta"/>
+            </intent-filter>
+
         </activity>
     </application>
 

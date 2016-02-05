@@ -1,16 +1,17 @@
 <resources>
     <string name="app_name">JuicyInsta</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_auth">AuthActivity</string>
-
 
     <!-- Authentication -->
-    <string name="frg_auth_info">Wanna see your Instagram profile here ?</string>
-    <string name="frg_auth_btn_login">Login with Instagram</string>
+    <string name="auth_app_desc">JuicyInsta bring you the joy of using Instagram :)</string>
+    <string name="auth_login_with_instagram">Login with Instagram</string>
 
-    <string name="dlg_auth_warning_title">Choose your browser</string>
-    <string name="dlg_auth_warning_message">We need you to login-in to your Instagram account in a web browser. You may use the JuicyInsta browser (OK) or your device\'s default one (CANCEL)</string>
-    
-    <string name="dlg_auth_warning_btn_ok">Ok</string>
-    <string name="dlg_auth_warning_btn_cancel">Cancel</string>
+    <string name="auth_message_choosebrowser">We need you to login-in to your Instagram account in a web browser. You may use the JuicyInsta browser (Recommended) or your device\'s default one.</string>
+    <string name="auth_btn_juicybrowser">Juicy Browser</string>
+    <string name="auth_btn_phonebrowser">Phone\'s Browser</string>
+
+    <string name="auth_message_success">Authorization Successful</string>
+    <string name="auth_message_error">Oooops ! Authorization Failed</string>
+    <string name="auth_retry">Retry !</string>
+
+
 </resources>
