@@ -32,7 +32,8 @@
         android:orientation="horizontal"
         android:layout_margin="@dimen/margin_medium"
         android:layout_below="@+id/auth_tvMessage"
-        android:visibility="gone"
+        android:visibility="visible"
+        android:gravity="center"
         android:weightSum="1">
 
         <android.support.v7.widget.AppCompatButton

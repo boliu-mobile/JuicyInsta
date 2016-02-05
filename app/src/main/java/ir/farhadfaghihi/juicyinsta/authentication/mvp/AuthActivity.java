@@ -129,22 +129,10 @@ public class AuthActivity extends AppCompatActivity implements IAuthView, View.O
     }
 
     @Override
-    public void hideMessage()
-    {
-        tvMessage.setVisibility(View.GONE);
-    }
-
-    @Override
     public void showLoginButton()
     {
         btnLogin.setVisibility(View.VISIBLE);
         btnLogin.setText(loginButton);
-    }
-
-    @Override
-    public void hideLoginButton()
-    {
-        btnLogin.setVisibility(View.GONE);
     }
 
     @Override
@@ -168,12 +156,6 @@ public class AuthActivity extends AppCompatActivity implements IAuthView, View.O
     }
 
     @Override
-    public void hideChooseBrowserButtons()
-    {
-        linearChooseBrowser.setVisibility(View.GONE);
-    }
-
-    @Override
     public void showInAppBrowser()
     {
         webView.setVisibility(View.VISIBLE);
@@ -182,7 +164,7 @@ public class AuthActivity extends AppCompatActivity implements IAuthView, View.O
     @Override
     public void showPhoneBrowser(Uri uri)
     {
-        JuicyIntents.showPhoneBrowser(this,uri) ;
+        JuicyIntents.showPhoneBrowser(this, uri) ;
     }
 
     @Override
@@ -196,11 +178,6 @@ public class AuthActivity extends AppCompatActivity implements IAuthView, View.O
         webView.loadUrl(url);
     }
 
-    @Override
-    public void hideInAppBrowser()
-    {
-        webView.setVisibility(View.GONE);
-    }
 
     @Override
     public void showSuccessfulAuthMessage()
@@ -215,7 +192,7 @@ public class AuthActivity extends AppCompatActivity implements IAuthView, View.O
     {
         tvMessage.setVisibility(View.VISIBLE);
         tvMessage.setText(authError);
-        tvMessage.setCompoundDrawablesWithIntrinsicBounds(null,imageAuthFailed,null,null);
+        tvMessage.setCompoundDrawablesWithIntrinsicBounds(null, imageAuthFailed, null, null);
     }
 
     @Override
@@ -226,9 +203,12 @@ public class AuthActivity extends AppCompatActivity implements IAuthView, View.O
     }
 
     @Override
-    public void hideRetryButton()
+    public void hideAllViews()
     {
-        btnRetry.setVisibility(View.GONE);
+        tvMessage.setVisibility(View.GONE);
+        btnLogin.setVisibility(View.GONE);
+        linearChooseBrowser.setVisibility(View.GONE);
+        webView.setVisibility(View.GONE);
     }
 
     @Override

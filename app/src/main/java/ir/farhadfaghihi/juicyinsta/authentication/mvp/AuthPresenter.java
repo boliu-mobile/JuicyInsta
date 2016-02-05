@@ -30,8 +30,7 @@ public class AuthPresenter implements IAuthPresenter,OnAuthListener
     @Override
     public void onSelectedRetry()
     {
-        authView.hideRetryButton();
-        authView.hideMessage();
+        authView.hideAllViews();
 
         authView.showChooseBrowserButtons();
         authView.showChooseBrowserMessage();
@@ -40,8 +39,7 @@ public class AuthPresenter implements IAuthPresenter,OnAuthListener
     @Override
     public void onSelectedLogin()
     {
-        authView.hideLoginButton();
-        authView.hideMessage();
+        authView.hideAllViews();
 
         authView.showChooseBrowserMessage();
         authView.showChooseBrowserButtons();
@@ -50,8 +48,7 @@ public class AuthPresenter implements IAuthPresenter,OnAuthListener
     @Override
     public void onSelectedInAppBrowser()
     {
-        authView.hideChooseBrowserButtons();
-        authView.hideMessage();
+        authView.hideAllViews();
 
         authView.showInAppBrowser();
 
@@ -71,6 +68,8 @@ public class AuthPresenter implements IAuthPresenter,OnAuthListener
     @Override
     public void onAuthStarted()
     {
+        authView.hideAllViews();
+
         authView.showLoginMessage();
         authView.showLoginButton();
     }
@@ -90,9 +89,7 @@ public class AuthPresenter implements IAuthPresenter,OnAuthListener
     @Override
     public void onUserAllowAuth()
     {
-        authView.hideInAppBrowser();
-        authView.hideChooseBrowserButtons();
-        authView.hideMessage();
+        authView.hideAllViews();
 
         authView.showSuccessfulAuthMessage();
 
