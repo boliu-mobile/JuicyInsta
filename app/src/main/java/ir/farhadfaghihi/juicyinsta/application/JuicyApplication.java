@@ -1,4 +1,4 @@
-package ir.farhadfaghihi.juicyinsta;
+package ir.farhadfaghihi.juicyinsta.application;
 
 import android.app.Application;
 
