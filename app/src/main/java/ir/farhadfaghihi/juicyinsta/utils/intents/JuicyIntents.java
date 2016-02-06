@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.widget.Toast;
 
-import ir.farhadfaghihi.juicyinsta.authentication.mvp.AuthActivity;
-import ir.farhadfaghihi.juicyinsta.user.mvp.ProfileActivity;
+import ir.farhadfaghihi.juicyinsta.activity.authentication.view.AuthActivity;
+import ir.farhadfaghihi.juicyinsta.activity.profile.view.ProfileActivity;
 
 /**
  * Created by Farhad on 2/3/2016.

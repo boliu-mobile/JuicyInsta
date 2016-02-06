@@ -2,7 +2,7 @@ package ir.farhadfaghihi.juicyinsta.utils.network;
 
 import android.net.Uri;
 
-import ir.farhadfaghihi.juicyinsta.network.model.ConstsApi;
+import ir.farhadfaghihi.juicyinsta.network.base.ConstsApi;
 
 /**
  * Created by Farhad on 2/1/2016.

@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".splash.mvp.SplashActivity"
+            android:name=".activity.splash.view.SplashActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:noHistory="true"
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".authentication.mvp.AuthActivity"
+            android:name=".activity.authentication.view.AuthActivity"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:noHistory="true"
@@ -43,7 +43,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".user.mvp.ProfileActivity"
+            android:name=".activity.profile.view.ProfileActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait" >
         </activity>
