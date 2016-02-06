@@ -58,6 +58,11 @@ public class ListModeAdapter extends RecyclerView.Adapter<ListModeAdapter.ViewHo
             viewHolder.tvCaption.setText(listItems.get(position).getCaption().getText());
         }
 
+        else
+        {
+            viewHolder.tvCaption.setText("");
+        }
+
     }
 
     @Override
