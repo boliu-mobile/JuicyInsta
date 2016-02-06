@@ -119,6 +119,8 @@ public class ProfilePresenter implements IProfilePresenter,OnGetUserDataListener
     {
         profileView.hideProgressBarUser();
 
+        profileView.showUsername(user.getUsername());
+
         profileView.loadUserAvatar(user.getProfile_picture());
 
         profileView.showUserFullname(user.getFull_name(), user.getUsername());

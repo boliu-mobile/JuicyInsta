@@ -88,6 +88,12 @@ public class ProfileActivity extends AppCompatActivity implements  IProfileView,
     }
 
     @Override
+    public void showUsername(String userName)
+    {
+        toolbar.setTitle(userName);
+    }
+
+    @Override
     public void showProgressBarUser()
     {
         progressUser.setVisibility(View.VISIBLE);

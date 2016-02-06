@@ -9,6 +9,8 @@ import ir.farhadfaghihi.juicyinsta.user.media.Media;
  */
 public interface IProfileView
 {
+    void showUsername(String username) ;
+
     void showProgressBarUser() ;
 
     void loadUserAvatar(String url) ;
