@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -44,18 +45,16 @@ public class ListModeAdapter extends RecyclerView.Adapter<ListModeAdapter.ViewHo
         int likes = listItems.get(position).getLikes().getCount() ;
         int comments = listItems.get(position).getComments().getCount() ;
 
-        Date dateCreated = new Date(Long.parseLong(listItems.get(position).getCreated_time()));
-
+        String date = getFormattedDate(listItems.get(position).getCreated_time()) ;
         ImageUtils.loadOriginal(context, url, viewHolder.imageView);
 
-        viewHolder.tvLikes.setText(likes + "\r\n" + "Likes");
-        viewHolder.tvComments.setText(comments + "\r\n" + "Comments");
-        viewHolder.tvDate.setText(dateCreated.toString());
+        viewHolder.tvLikes.setText(likes + "");
+        viewHolder.tvComments.setText(comments + "");
+        viewHolder.tvDate.setText(date);
 
-        Caption caption = listItems.get(position).getCaption();
-        if(caption != null)
+        if(listItems.get(position).getCaption() != null)
         {
-            viewHolder.tvCaption.setText(caption.getText());
+            viewHolder.tvCaption.setText(listItems.get(position).getCaption().getText());
         }
 
     }
@@ -80,5 +79,15 @@ public class ListModeAdapter extends RecyclerView.Adapter<ListModeAdapter.ViewHo
             super(view);
             ButterKnife.bind(this, view);
         }
+    }
+
+    private String getFormattedDate(String createdTime)
+    {
+        Date date = new Date(Long.parseLong(createdTime)*1000);
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM-dd-yy") ;
+
+        return simpleDateFormat.format(date) ;
+
     }
 }

@@ -24,19 +24,22 @@
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/list_tvLikes"
                 style="@style/TextViewMedium"
+                android:drawableTop="@drawable/like"
                 android:layout_weight="1"
                 android:textColor="@color/flat_red_light"/>
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/list_tvComments"
                 style="@style/TextViewMedium"
+                android:drawableTop="@drawable/comments"
                 android:layout_weight="1"
-                android:textColor="@color/flat_green_dark"/>
+                android:textColor="@color/flat_green_light"/>
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/list_tvDate"
                 style="@style/TextViewMedium"
                 android:layout_weight="1"
+                android:drawableTop="@drawable/date"
                 android:textColor="@color/flat_black_dark"/>
 
         </LinearLayout>
