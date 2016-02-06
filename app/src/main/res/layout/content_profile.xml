@@ -36,7 +36,6 @@
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/profile_tvUserFullName"
             style="@style/TextViewLarge"
-            android:textStyle="normal"
             android:padding="@dimen/padding_small"/>
 
         <android.support.v7.widget.AppCompatTextView
@@ -67,35 +66,41 @@
                 android:id="@+id/profile_tvPostCount"
                 style="@style/TextViewMedium"
                 android:layout_weight="1"
-                android:textStyle="normal"/>
+                android:textColor="@color/primary"
+                />
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/profile_tvFollowers"
                 style="@style/TextViewMedium"
-                android:layout_weight="1"
-                android:textStyle="normal"/>
+                android:textColor="@color/accent"
+                android:layout_weight="1"/>
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/profile_tvFollowing"
                 style="@style/TextViewMedium"
-                android:layout_weight="1"
-                android:textStyle="normal"/>
+                android:textColor="@color/accent"
+                android:layout_weight="1"/>
 
         </LinearLayout>
 
         <ProgressBar
             android:id="@+id/profile_progress_userdata"
-            android:layout_width="@dimen/image_user_avatar"
-            android:layout_height="@dimen/image_user_avatar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"/>
 
     </FrameLayout>
 
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/primary"
         android:layout_below="@+id/profile_frame_profiledata"/>
 
+    <include layout="@layout/content_profile_media"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/view"/>
 
 </RelativeLayout>

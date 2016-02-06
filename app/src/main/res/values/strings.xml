@@ -19,5 +19,8 @@
     <string name="profile_follower">Followers</string>
     <string name="profile_following">Followings</string>
 
+    <string name="media_likes">Likes</string>
+    <string name="media_comments">Comments</string>
+
 
 </resources>

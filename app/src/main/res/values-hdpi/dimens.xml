@@ -16,6 +16,9 @@
     <dimen name="margin_medium">10dp</dimen>
     <dimen name="margin_large">15dp</dimen>
 
-    <dimen name="image_user_avatar">50dp</dimen>
-    <dimen name="image_media">100dp</dimen>
+    <dimen name="image_avatar_collapsed">30dp</dimen>
+    <dimen name="image_user_avatar">100dp</dimen>
+    <dimen name="image_media">400dp</dimen>
+
+    <integer name="width_column">150</integer>
 </resources>

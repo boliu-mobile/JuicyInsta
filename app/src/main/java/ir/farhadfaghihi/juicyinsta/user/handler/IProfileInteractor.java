@@ -6,4 +6,6 @@ package ir.farhadfaghihi.juicyinsta.user.handler;
 public interface IProfileInteractor
 {
     void getUserData(OnGetUserDataListener listener) ;
+
+    void getUserMedia(OnGetUserMediaListener listener);
 }

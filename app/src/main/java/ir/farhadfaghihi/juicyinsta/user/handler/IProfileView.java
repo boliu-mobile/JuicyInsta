@@ -1,5 +1,9 @@
 package ir.farhadfaghihi.juicyinsta.user.handler;
 
+import java.util.ArrayList;
+
+import ir.farhadfaghihi.juicyinsta.user.media.Media;
+
 /**
  * Created by Farhad on 2/5/2016.
  */
@@ -22,4 +26,8 @@ public interface IProfileView
     void hideProgressBarUser() ;
 
     void showErrorMessage(String message) ;
+
+    void showUserMediaGridMode(ArrayList<Media> listMedia);
+
+    void showUserMediaListMode(ArrayList<Media> listMedia);
 }

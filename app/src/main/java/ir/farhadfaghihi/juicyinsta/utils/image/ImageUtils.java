@@ -47,6 +47,33 @@ public class ImageUtils
         }
     }
 
+    public static void loadOriginal(Context context,String url,ImageView imageView)
+    {
+        try
+        {
+            Picasso.with(context).load(Uri.parse(url)).into(imageView, new com.squareup.picasso.Callback()
+            {
+                @Override
+                public void onSuccess()
+                {
+
+                }
+
+                @Override
+                public void onError()
+                {
+
+                }
+            });
+
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+
+        }
+    }
+
     public static void load(final Context ctx, final String url, final ImageView img)
     {
         if (url != null && !url.equals(""))

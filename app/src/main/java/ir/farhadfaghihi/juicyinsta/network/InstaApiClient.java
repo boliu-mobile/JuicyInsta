@@ -9,8 +9,11 @@ import com.squareup.okhttp.Response;
 import java.io.IOException;
 
 import ir.farhadfaghihi.juicyinsta.network.model.ConstsApi;
+import ir.farhadfaghihi.juicyinsta.network.model.MediaApi;
 import ir.farhadfaghihi.juicyinsta.network.model.UserApi;
 import ir.farhadfaghihi.juicyinsta.user.handler.OnGetUserDataListener;
+import ir.farhadfaghihi.juicyinsta.user.handler.OnGetUserMediaListener;
+import ir.farhadfaghihi.juicyinsta.user.media.MediaResponse;
 import ir.farhadfaghihi.juicyinsta.user.model.UserResponse;
 import retrofit.Call;
 import retrofit.Callback;
@@ -52,6 +55,16 @@ public class InstaApiClient implements Interceptor
         return instance ;
     }
 
+
+    @Override
+    public Response intercept(Chain chain) throws IOException
+    {
+        Log.e("URL CALLED : " ,chain.request().urlString()) ;
+
+        Response response = chain.proceed(chain.request());
+        return response;
+    }
+
     public void getUserData(final OnGetUserDataListener listener)
     {
         UserApi userApi = retrofit.create(UserApi.class);
@@ -85,14 +98,35 @@ public class InstaApiClient implements Interceptor
 
     }
 
-
-    @Override
-    public Response intercept(Chain chain) throws IOException
+    public void getUserMedia(final OnGetUserMediaListener listener)
     {
-        Log.e("url called : ", chain.request().urlString()) ;
+        MediaApi mediaApi = retrofit.create(MediaApi.class);
 
-        Response response = chain.proceed(chain.request());
-        return response;
+        Call<MediaResponse> callMediaData = mediaApi.getUserMedia(accessToken);
+        callMediaData.enqueue(new Callback<MediaResponse>()
+        {
+            @Override
+            public void onResponse(retrofit.Response<MediaResponse> response)
+            {
+                int code = response.body().getMeta().getCode() ;
+
+                if(code == 200)
+                {
+                    listener.onSuccess(response.body().getData());
+                }
+
+                else
+                {
+                    listener.onError(code + "");
+                }
+            }
+
+            @Override
+            public void onFailure(Throwable t)
+            {
+                listener.onError(t.getMessage());
+            }
+        });
     }
 
 }

@@ -1,9 +1,13 @@
 package ir.farhadfaghihi.juicyinsta.user.mvp;
 
+import java.util.ArrayList;
+
 import ir.farhadfaghihi.juicyinsta.user.handler.IProfileInteractor;
 import ir.farhadfaghihi.juicyinsta.user.handler.IProfilePresenter;
 import ir.farhadfaghihi.juicyinsta.user.handler.IProfileView;
 import ir.farhadfaghihi.juicyinsta.user.handler.OnGetUserDataListener;
+import ir.farhadfaghihi.juicyinsta.user.handler.OnGetUserMediaListener;
+import ir.farhadfaghihi.juicyinsta.user.media.Media;
 import ir.farhadfaghihi.juicyinsta.user.model.UserData;
 
 /**
@@ -13,6 +17,8 @@ public class ProfilePresenter implements IProfilePresenter,OnGetUserDataListener
 {
     private IProfileView profileView ;
     private IProfileInteractor profileInteractor ;
+
+    private ArrayList<Media> listMedia ;
 
     public ProfilePresenter(IProfileView profileView)
     {
@@ -30,25 +36,78 @@ public class ProfilePresenter implements IProfilePresenter,OnGetUserDataListener
     @Override
     public void onSelectedFollowers()
     {
-
+        /**
+         * Todo : Show DialogFragment for showing the Followers list
+         */
     }
 
     @Override
     public void onSelectedFollowings()
     {
-
+        /**
+         * Todo : Show DialogFragment for showing the followings list
+         */
     }
 
     @Override
     public void onSelectedGridMode()
     {
+        if(listMedia != null && listMedia.size() != 0)
+        {
+            profileView.showUserMediaGridMode(listMedia);
+        }
+
+        else
+        {
+            profileInteractor.getUserMedia(new OnGetUserMediaListener()
+            {
+                @Override
+                public void onSuccess(ArrayList<Media> listMedia)
+                {
+                    ProfilePresenter.this.listMedia = listMedia ;
+
+                    profileView.showUserMediaGridMode(listMedia);
+
+                }
+
+                @Override
+                public void onError(String message)
+                {
+                    profileView.showErrorMessage(message);
+                }
+            });
+        }
 
     }
 
     @Override
     public void onSelectedListMode()
     {
+        if(listMedia != null && listMedia.size() != 0)
+        {
+            profileView.showUserMediaListMode(listMedia);
+        }
 
+        else
+        {
+            profileInteractor.getUserMedia(new OnGetUserMediaListener()
+            {
+                @Override
+                public void onSuccess(ArrayList<Media> listMedia)
+                {
+                    ProfilePresenter.this.listMedia = listMedia ;
+
+                    profileView.showUserMediaListMode(listMedia);
+
+                }
+
+                @Override
+                public void onError(String message)
+                {
+                    profileView.showErrorMessage(message);
+                }
+            });
+        }
     }
 
     /**
@@ -70,6 +129,7 @@ public class ProfilePresenter implements IProfilePresenter,OnGetUserDataListener
         profileView.showFollowingCount(String.valueOf(user.getCounts().getFollows()));
 
     }
+
 
     @Override
     public void onError(String message)
