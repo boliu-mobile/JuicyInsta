@@ -137,7 +137,7 @@ public class ProfileActivity extends AppCompatActivity implements  IProfileView,
     @Override
     public void showUserMediaGridMode(ArrayList<Media> listMedia)
     {
-        fab.setImageResource(R.drawable.list);
+        fab.setImageResource(R.drawable.listmode);
 
         profileRecyclerview.addItemDecoration(new MarginDecoration(this));
         profileRecyclerview.setHasFixedSize(true);
@@ -149,7 +149,7 @@ public class ProfileActivity extends AppCompatActivity implements  IProfileView,
     @Override
     public void showUserMediaListMode(ArrayList<Media> listMedia)
     {
-        fab.setImageResource(R.drawable.grid);
+        fab.setImageResource(R.drawable.gridmode);
 
         profileRecyclerview.addItemDecoration(new MarginDecoration(this));
         profileRecyclerview.setHasFixedSize(true);
