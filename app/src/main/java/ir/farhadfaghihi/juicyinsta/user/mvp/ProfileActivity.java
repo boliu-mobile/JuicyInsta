@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatTextView;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -24,7 +25,6 @@ import ir.farhadfaghihi.juicyinsta.user.media.GridModeAdapter;
 import ir.farhadfaghihi.juicyinsta.user.media.ListModeAdapter;
 import ir.farhadfaghihi.juicyinsta.user.media.Media;
 import ir.farhadfaghihi.juicyinsta.utils.image.ImageUtils;
-import ir.farhadfaghihi.juicyinsta.widget.GridAutofitLayoutManager;
 import ir.farhadfaghihi.juicyinsta.widget.MarginDecoration;
 
 public class ProfileActivity extends AppCompatActivity implements  IProfileView, View.OnClickListener
@@ -69,15 +69,22 @@ public class ProfileActivity extends AppCompatActivity implements  IProfileView,
         setContentView(R.layout.activity_profile);
         ButterKnife.bind(this);
 
-        fab.setOnClickListener(this);
-
-        setSupportActionBar(toolbar);
+        init();
 
         profilePresenter = new ProfilePresenter(this);
-
         profilePresenter.loadUserData();
         profilePresenter.onSelectedGridMode();
 
+    }
+
+    private void init()
+    {
+        setSupportActionBar(toolbar);
+
+        fab.setOnClickListener(this);
+
+        profileRecyclerview.addItemDecoration(new MarginDecoration(this));
+        profileRecyclerview.setHasFixedSize(true);
     }
 
     @Override
@@ -137,11 +144,9 @@ public class ProfileActivity extends AppCompatActivity implements  IProfileView,
     @Override
     public void showUserMediaGridMode(ArrayList<Media> listMedia)
     {
-        fab.setImageResource(R.drawable.listmode);
+        fab.setImageResource(R.drawable.gridmode);
 
-        profileRecyclerview.addItemDecoration(new MarginDecoration(this));
-        profileRecyclerview.setHasFixedSize(true);
-        profileRecyclerview.setLayoutManager(new GridAutofitLayoutManager(this, 250));
+        profileRecyclerview.setLayoutManager(new GridLayoutManager(this, 3));
 
         profileRecyclerview.setAdapter(new GridModeAdapter(this, listMedia));
     }
@@ -149,10 +154,8 @@ public class ProfileActivity extends AppCompatActivity implements  IProfileView,
     @Override
     public void showUserMediaListMode(ArrayList<Media> listMedia)
     {
-        fab.setImageResource(R.drawable.gridmode);
+        fab.setImageResource(R.drawable.listmode);
 
-        profileRecyclerview.addItemDecoration(new MarginDecoration(this));
-        profileRecyclerview.setHasFixedSize(true);
         profileRecyclerview.setLayoutManager(new LinearLayoutManager(this));
 
         profileRecyclerview.setAdapter(new ListModeAdapter(this, listMedia));
