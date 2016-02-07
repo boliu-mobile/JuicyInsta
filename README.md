@@ -41,8 +41,8 @@ The latter shows the basic profile information of the user, in addition to the m
 Since the applications that interact with Instagram API, are first authorized in [SandBox ](https://www.instagram.com/developer/sandbox/)mode, they will only receive the last twenty media, including photos and videos, from the Instagram data provider.
 
 ### Application Structure ###
-The activities are implemented and structured bases on the MVP, mostly compilant to the version implemented and contributed by the [Antonio Leiva](http://antonioleiva.com/mvp-android/).
+The activities are implemented and structured bases on the MVP pattern, mostly compilant to the version implemented and contributed by the [Antonio Leiva](http://antonioleiva.com/mvp-android/).
 
 The networking is all managed by [Retrofit ](http://square.github.io/retrofit/)and OkHttp as its httpclient, developed and contributed by the [Square](http://square.github.io).
 
-The settings of the application is persisted using AppSetting, a wrapper for Android SharedPreferences, which takes advantages of HashMaps for faster save and retrieval, developed by Farhad Faghihi.
+The settings of the application is persisted using AppSetting, a wrapper for Android SharedPreferences, which takes advantage of HashMaps for faster save and retrieval, developed by Farhad Faghihi.
