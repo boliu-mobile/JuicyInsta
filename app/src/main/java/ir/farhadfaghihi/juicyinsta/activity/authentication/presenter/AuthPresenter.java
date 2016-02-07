@@ -2,16 +2,22 @@ package ir.farhadfaghihi.juicyinsta.activity.authentication.presenter;
 
 import android.net.Uri;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 import ir.farhadfaghihi.juicyinsta.activity.authentication.model.AuthInteractor;
 import ir.farhadfaghihi.juicyinsta.activity.authentication.model.IAuthInteractor;
-import ir.farhadfaghihi.juicyinsta.activity.authentication.view.IAuthView;
 import ir.farhadfaghihi.juicyinsta.activity.authentication.model.OnAuthListener;
+import ir.farhadfaghihi.juicyinsta.activity.authentication.view.IAuthView;
+import ir.farhadfaghihi.juicyinsta.receiver.NetworkChangeEvent;
 
 /**
  * Created by Farhad on 2/5/2016.
  */
 public class AuthPresenter implements IAuthPresenter,OnAuthListener
 {
+    private EventBus eventBus ;
+
     private IAuthView authView ;
     private IAuthInteractor authInteractor ;
 
@@ -19,6 +25,10 @@ public class AuthPresenter implements IAuthPresenter,OnAuthListener
     {
         this.authView = authView ;
         this.authInteractor = new AuthInteractor() ;
+
+        eventBus = EventBus.getDefault();
+
+        eventBus.register(this);
     }
 
     @Override
@@ -103,5 +113,10 @@ public class AuthPresenter implements IAuthPresenter,OnAuthListener
     {
         authView.showFailedAuthMessage();
         authView.showRetryButton();
+    }
+
+    @Subscribe
+    public void onEvent(NetworkChangeEvent event){
+        authView.showConnectivityChangedMessage(event.getMessage());
     }
 }

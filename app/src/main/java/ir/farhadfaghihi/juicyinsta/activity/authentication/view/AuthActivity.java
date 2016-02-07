@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
@@ -184,7 +185,7 @@ public class AuthActivity extends AppCompatActivity implements IAuthView, View.O
     {
         tvMessage.setVisibility(View.VISIBLE);
         tvMessage.setText(authSuccesful);
-        tvMessage.setCompoundDrawablesWithIntrinsicBounds(null,imageAuthSuccessful,null,null);
+        tvMessage.setCompoundDrawablesWithIntrinsicBounds(null, imageAuthSuccessful, null, null);
     }
 
     @Override
@@ -209,6 +210,12 @@ public class AuthActivity extends AppCompatActivity implements IAuthView, View.O
         btnLogin.setVisibility(View.GONE);
         linearChooseBrowser.setVisibility(View.GONE);
         webView.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void showConnectivityChangedMessage(String message)
+    {
+        Snackbar.make(webView,message,Snackbar.LENGTH_LONG).show();
     }
 
     @Override

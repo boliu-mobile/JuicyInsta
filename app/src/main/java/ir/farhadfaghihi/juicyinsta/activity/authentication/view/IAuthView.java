@@ -29,5 +29,7 @@ public interface IAuthView
 
     void hideAllViews() ;
 
+    void showConnectivityChangedMessage(String message) ;
+
     void navigateToUserProfile() ;
 }

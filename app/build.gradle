@@ -31,4 +31,5 @@ dependencies {
     compile 'com.squareup.retrofit:converter-gson:2.0.0-beta1'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'org.greenrobot:eventbus:3.0.0'
 }

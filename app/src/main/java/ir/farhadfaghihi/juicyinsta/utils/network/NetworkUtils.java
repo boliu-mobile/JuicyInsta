@@ -1,5 +1,8 @@
 package ir.farhadfaghihi.juicyinsta.utils.network;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 
 import ir.farhadfaghihi.juicyinsta.network.base.ConstsApi;
@@ -7,7 +10,7 @@ import ir.farhadfaghihi.juicyinsta.network.base.ConstsApi;
 /**
  * Created by Farhad on 2/1/2016.
  */
-public class URLUtils
+public class NetworkUtils
 {
     /**
      * Extract the acccesstoken from the redirect_url after
@@ -45,5 +48,14 @@ public class URLUtils
                 "response_type=token" ;
 
         return instagramAuthUrl ;
+    }
+
+    public static boolean isConnected(Context context)
+    {
+        ConnectivityManager connectivityManager = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+        return networkInfo != null && networkInfo.isConnectedOrConnecting() ;
     }
 }
