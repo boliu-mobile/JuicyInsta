@@ -85,7 +85,7 @@ public class AuthPresenter implements IAuthPresenter,OnAuthListener
     @Override
     public void onAuthFinished(Uri uri)
     {
-        authInteractor.checAuthCalllback(uri,this);
+        authInteractor.checkAuthCallback(uri, this);
     }
 
     @Override

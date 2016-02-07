@@ -9,5 +9,5 @@ public interface IAuthInteractor
 {
     String getInstagramAuthUrl() ;
 
-    void checAuthCalllback(Uri uriCallback,OnAuthListener onAuthListener);
+    void checkAuthCallback(Uri uriCallback, OnAuthListener onAuthListener);
 }

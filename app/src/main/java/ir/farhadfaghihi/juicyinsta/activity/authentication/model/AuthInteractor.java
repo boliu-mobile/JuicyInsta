@@ -20,7 +20,7 @@ public class AuthInteractor implements IAuthInteractor
     }
 
     @Override
-    public void checAuthCalllback(Uri uriCallback, OnAuthListener onAuthListener)
+    public void checkAuthCallback(Uri uriCallback, OnAuthListener onAuthListener)
     {
         String token = URLUtils.extractAccessToken(uriCallback);
 
