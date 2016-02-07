@@ -1,68 +1,76 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:tools="http://schemas.android.com/tools"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+    android:layout_margin="@dimen/margin_small">
 
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/auth_tvMessage"
-        style="@style/TextViewLarge"
-        android:textStyle="normal"
-        android:layout_centerInParent="true"/>
-
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/auth_btn_login"
-        android:layout_marginTop="10dp"
-        android:visibility="gone"
-        android:layout_below="@+id/auth_tvMessage"
-        android:layout_centerHorizontal="true"
-        style="@style/ButtonBlueLarge"
-        android:onClick="onClick"
-        android:textAllCaps="false"/>
-
-    <WebView
-        android:id="@+id/auth_webview"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"/>
+        android:gravity="center">
 
-    <LinearLayout
-        android:id="@+id/auth_linear_choosebrowser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="@dimen/margin_medium"
-        android:layout_below="@+id/auth_tvMessage"
-        android:visibility="visible"
-        android:gravity="center"
-        android:weightSum="1">
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/auth_tvMessage"
+            style="@style/TextViewLarge"
+            android:layout_centerInParent="true"
+            android:textStyle="normal"/>
 
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/auth_choosebrowser_btnInApp"
-            android:layout_marginTop="10dp"
-            style="@style/ButtonLargeOrange"
-            android:textAllCaps="false"
-            android:onClick="onClick"
-            android:layout_weight="0.5"
-            android:layout_margin="@dimen/margin_medium"/>
-
-        <android.support.v7.widget.AppCompatButton
-            android:id="@+id/auth_choosebrowser_btnPhoneDefault"
+            android:id="@+id/auth_btn_login"
             style="@style/ButtonBlueLarge"
-            android:layout_weight="0.5"
+            android:layout_below="@+id/auth_tvMessage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
             android:onClick="onClick"
+            android:textAllCaps="false"
+            android:visibility="gone"/>
+
+        <WebView
+            android:id="@+id/auth_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:id="@+id/auth_linear_choosebrowser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/auth_tvMessage"
             android:layout_margin="@dimen/margin_medium"
-            android:textAllCaps="false"/>
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            android:weightSum="1">
 
-    </LinearLayout>
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/auth_choosebrowser_btnInApp"
+                style="@style/ButtonLargeOrange"
+                android:layout_margin="@dimen/margin_medium"
+                android:layout_marginTop="10dp"
+                android:layout_weight="0.5"
+                android:onClick="onClick"
+                android:textAllCaps="false"/>
 
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/auth_btnRetry"
-        style="@style/ButtonLargeGreen"
-        android:layout_margin="@dimen/margin_medium"
-        android:layout_centerHorizontal="true"
-        android:visibility="gone"
-        android:onClick="onClick"
-        android:layout_below="@+id/auth_tvMessage"
-        android:textAllCaps="false"/>
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/auth_choosebrowser_btnPhoneDefault"
+                style="@style/ButtonBlueLarge"
+                android:layout_margin="@dimen/margin_medium"
+                android:layout_weight="0.5"
+                android:onClick="onClick"
+                android:textAllCaps="false"/>
 
-</RelativeLayout>
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/auth_btnRetry"
+            style="@style/ButtonLargeGreen"
+            android:layout_below="@+id/auth_tvMessage"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/margin_medium"
+            android:onClick="onClick"
+            android:textAllCaps="false"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
