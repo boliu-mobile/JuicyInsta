@@ -166,6 +166,12 @@ public class ProfileActivity extends AppCompatActivity implements  IProfileView,
     }
 
     @Override
+    public void showConnectivityChangedMessage(String message)
+    {
+        Snackbar.make(fab,message,Snackbar.LENGTH_LONG).show();
+    }
+
+    @Override
     public void onClick(View view)
     {
         switch (view.getId())

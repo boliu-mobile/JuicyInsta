@@ -1,5 +1,8 @@
 package ir.farhadfaghihi.juicyinsta.activity.profile.presenter;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 import java.util.ArrayList;
 
 import ir.farhadfaghihi.juicyinsta.activity.profile.model.ProfileInteractor;
@@ -9,12 +12,15 @@ import ir.farhadfaghihi.juicyinsta.activity.profile.model.OnGetUserDataListener;
 import ir.farhadfaghihi.juicyinsta.activity.profile.model.OnGetUserMediaListener;
 import ir.farhadfaghihi.juicyinsta.network.media.model.Media;
 import ir.farhadfaghihi.juicyinsta.network.profile.model.UserData;
+import ir.farhadfaghihi.juicyinsta.receiver.NetworkChangeEvent;
 
 /**
  * Created by Farhad on 2/5/2016.
  */
 public class ProfilePresenter implements IProfilePresenter,OnGetUserDataListener
 {
+    private EventBus eventBus ;
+
     private IProfileView profileView ;
     private IProfileInteractor profileInteractor ;
 
@@ -24,6 +30,9 @@ public class ProfilePresenter implements IProfilePresenter,OnGetUserDataListener
     {
         this.profileView = profileView ;
         profileInteractor = new ProfileInteractor();
+
+        eventBus = EventBus.getDefault();
+        eventBus.register(this);
     }
 
 
@@ -137,5 +146,10 @@ public class ProfilePresenter implements IProfilePresenter,OnGetUserDataListener
     public void onError(String message)
     {
         profileView.showErrorMessage(message);
+    }
+
+    @Subscribe
+    public void onEvent(NetworkChangeEvent event){
+        profileView.showConnectivityChangedMessage(event.getMessage());
     }
 }

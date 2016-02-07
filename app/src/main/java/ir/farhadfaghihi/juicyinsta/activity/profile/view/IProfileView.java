@@ -32,4 +32,6 @@ public interface IProfileView
     void showUserMediaGridMode(ArrayList<Media> listMedia);
 
     void showUserMediaListMode(ArrayList<Media> listMedia);
+
+    void showConnectivityChangedMessage(String message) ;
 }
