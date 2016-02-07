@@ -9,98 +9,100 @@
     tools:context=".activity.profile.view.ProfileActivity"
     tools:showIn="@layout/activity_profile">
 
-    <RelativeLayout
-        android:id="@+id/profile_relative_avatar"
+    <android.support.v7.widget.CardView
+        android:id="@+id/profile_cardview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical">
+        android:visibility="gone"
+        android:layout_margin="@dimen/margin_small">
 
-        <ImageView
-            android:id="@+id/profile_imageview_avatar"
-            android:layout_width="@dimen/image_user_avatar"
-            android:layout_height="@dimen/image_user_avatar"
-            android:layout_alignParentLeft="true"
-            android:layout_margin="@dimen/margin_large"
-            android:src="@drawable/avatar_default"
-            android:scaleType="fitCenter"/>
-
-        <LinearLayout
-            android:id="@+id/profile_linear_userdata"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/margin_large"
-            android:layout_toRightOf="@+id/profile_imageview_avatar"
-            android:gravity="left|center_vertical"
-            android:orientation="vertical">
+            android:gravity="center_vertical">
 
-        <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/profile_tvUserFullName"
-            style="@style/TextViewLarge"
-            android:padding="@dimen/padding_small"/>
+            <RelativeLayout
+                android:id="@+id/profile_relative_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:foregroundGravity="center_vertical">
 
-        <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/profile_tvUserBio"
-            style="@style/TextViewMedium"
-            android:textStyle="normal"
-            android:padding="@dimen/padding_small"/>
+                <ImageView
+                    android:id="@+id/profile_imageview_avatar"
+                    android:layout_width="@dimen/image_user_avatar"
+                    android:layout_height="@dimen/image_user_avatar"
+                    android:layout_alignParentLeft="true"
+                    android:layout_margin="@dimen/margin_large"
+                    android:scaleType="fitCenter"/>
 
-        </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/profile_linear_userdata"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_large"
+                    android:layout_toRightOf="@+id/profile_imageview_avatar"
+                    android:gravity="left|center_vertical"
+                    android:orientation="vertical">
 
-    </RelativeLayout>
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/profile_tvUserFullName"
+                        style="@style/TextViewLarge"
+                        android:padding="@dimen/padding_small"/>
 
-    <FrameLayout
-        android:id="@+id/profile_frame_profiledata"
-        android:layout_width="match_parent"
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/profile_tvUserBio"
+                        style="@style/TextViewMedium"
+                        android:textStyle="normal"
+                        android:padding="@dimen/padding_small"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/profile_linear_profiledata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/profile_relative_avatar"
+                android:layout_weight="3"
+                android:gravity="center|center_vertical"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/profile_tvPostCount"
+                    style="@style/TextViewMedium"
+                    android:layout_weight="1"
+                    android:textColor="@color/primary"
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/profile_tvFollowers"
+                    style="@style/TextViewMedium"
+                    android:textColor="@color/accent"
+                    android:layout_weight="1"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/profile_tvFollowing"
+                    style="@style/TextViewMedium"
+                    android:textColor="@color/accent"
+                    android:layout_weight="1"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <ProgressBar
+        android:id="@+id/profile_progress"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/profile_relative_avatar">
-
-        <LinearLayout
-            android:id="@+id/profile_linear_profiledata"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/profile_tvPostCount"
-                style="@style/TextViewMedium"
-                android:layout_weight="1"
-                android:textColor="@color/primary"
-                />
-
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/profile_tvFollowers"
-                style="@style/TextViewMedium"
-                android:textColor="@color/accent"
-                android:layout_weight="1"/>
-
-            <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/profile_tvFollowing"
-                style="@style/TextViewMedium"
-                android:textColor="@color/accent"
-                android:layout_weight="1"/>
-
-        </LinearLayout>
-
-        <ProgressBar
-            android:id="@+id/profile_progress_userdata"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
-
-    </FrameLayout>
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/primary"
-        android:layout_below="@+id/profile_frame_profiledata"/>
+        android:layout_centerInParent="true"/>
 
     <include layout="@layout/content_profile_media"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:layout_below="@+id/view"/>
+             android:layout_below="@+id/profile_cardview"/>
 
 </RelativeLayout>

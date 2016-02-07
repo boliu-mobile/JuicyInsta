@@ -12,6 +12,7 @@
     <color name="white">#ffffff</color>
 
 
+    <color name="flat_white_transparent">#80FAFAFA</color>
     <color name="flat_green_dark">#27ae60</color>
     <color name="flat_green_light">#2cc36b</color>
     <color name="flat_blue_light">#3498db</color>
@@ -26,20 +27,4 @@
     <color name="flat_white_dark">#bdc3c7</color>
     <color name="flat_black_dark">#34495e</color>
 
-    <!-- Flat Transparent Colors-->
-    <color name="flat_red_transparent">#80CF000F</color>
-    <color name="flat_pink_transparent">#80F62459</color>
-    <color name="flat_purple_transparent">#808E44AD</color>
-    <color name="flat_blue_transparent">#802980B9</color>
-    <color name="flat_cyan_transparent">#8000BCD4</color>
-    <color name="flat_green_transparent">#8026A65B</color>
-    <color name="flat_lime_transparent">#80BFFF00</color>
-    <color name="flat_yellow_transparent">#80F7CA18</color>
-    <color name="flat_orange_transparent">#80F9690E</color>
-    <color name="flat_brown_transparent">#80795548</color>
-    <color name="flat_grey_transparent">#809E9E9E</color>
-    <color name="flat_white_transparent">#80FAFAFA</color>
-
-    <color name="flat_yellow_light_transparent">#90f1c40f</color>
-    <color name="flat_green_light_transparent">#902cc36b</color>
 </resources>

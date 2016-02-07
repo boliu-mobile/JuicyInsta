@@ -126,7 +126,7 @@ public class ProfilePresenter implements IProfilePresenter,OnGetUserDataListener
     @Override
     public void onSuccess(UserData user)
     {
-        profileView.hideProgressBarUser();
+        profileView.hideProgress();
 
         profileView.showUsername(user.getUsername());
 

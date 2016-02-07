@@ -11,7 +11,7 @@ public interface IProfileView
 {
     void showUsername(String username) ;
 
-    void showProgressBarUser() ;
+    void showProgress() ;
 
     void loadUserAvatar(String url) ;
 
@@ -25,7 +25,7 @@ public interface IProfileView
 
     void showFollowingCount(String followingCount) ;
 
-    void hideProgressBarUser() ;
+    void hideProgress() ;
 
     void showErrorMessage(String message) ;
 

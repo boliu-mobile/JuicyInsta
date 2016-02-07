@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatTextView;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -25,7 +26,7 @@ import ir.farhadfaghihi.juicyinsta.network.media.model.Media;
 import ir.farhadfaghihi.juicyinsta.utils.image.ImageUtils;
 import ir.farhadfaghihi.juicyinsta.utils.widget.MarginDecoration;
 
-public class ProfileActivity extends AppCompatActivity implements  IProfileView, View.OnClickListener
+public class ProfileActivity extends AppCompatActivity implements IProfileView, View.OnClickListener
 {
     @Bind(R.id.toolbar)
     Toolbar toolbar;
@@ -41,13 +42,12 @@ public class ProfileActivity extends AppCompatActivity implements  IProfileView,
     AppCompatTextView tvFollowerCount;
     @Bind(R.id.profile_tvFollowing)
     AppCompatTextView tvFollowingCount;
-    @Bind(R.id.profile_progress_userdata)
-    ProgressBar progressUser;
     @Bind(R.id.profile_fab)
     FloatingActionButton fab;
     @Bind(R.id.profile_recyclerview)
     RecyclerView profileRecyclerview;
-
+    @Bind(R.id.profile_progress)
+    ProgressBar progressBar;
     @BindString(R.string.profile_post)
     String posts;
     @BindString(R.string.profile_follower)
@@ -56,9 +56,10 @@ public class ProfileActivity extends AppCompatActivity implements  IProfileView,
     String following;
 
     IProfilePresenter profilePresenter;
+    @Bind(R.id.profile_cardview)
+    CardView profileCardview;
 
-    private boolean isGridMode = false ;
-
+    private boolean isGridMode = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -92,9 +93,9 @@ public class ProfileActivity extends AppCompatActivity implements  IProfileView,
     }
 
     @Override
-    public void showProgressBarUser()
+    public void showProgress()
     {
-        progressUser.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -106,6 +107,8 @@ public class ProfileActivity extends AppCompatActivity implements  IProfileView,
     @Override
     public void showUserFullname(String fullName, String userName)
     {
+        profileCardview.setVisibility(View.VISIBLE);
+        
         tvUserFullName.setText(fullName);
     }
 
@@ -134,9 +137,9 @@ public class ProfileActivity extends AppCompatActivity implements  IProfileView,
     }
 
     @Override
-    public void hideProgressBarUser()
+    public void hideProgress()
     {
-        progressUser.setVisibility(View.GONE);
+        progressBar.setVisibility(View.GONE);
     }
 
     @Override
@@ -148,6 +151,9 @@ public class ProfileActivity extends AppCompatActivity implements  IProfileView,
     @Override
     public void showUserMediaGridMode(ArrayList<Media> listMedia)
     {
+        fab.setVisibility(View.VISIBLE);
+        profileRecyclerview.setVisibility(View.VISIBLE);
+
         fab.setImageResource(R.drawable.gridmode);
 
         profileRecyclerview.setLayoutManager(new GridLayoutManager(this, 3));
@@ -158,6 +164,9 @@ public class ProfileActivity extends AppCompatActivity implements  IProfileView,
     @Override
     public void showUserMediaListMode(ArrayList<Media> listMedia)
     {
+        fab.setVisibility(View.VISIBLE);
+        profileRecyclerview.setVisibility(View.VISIBLE);
+
         fab.setImageResource(R.drawable.listmode);
 
         profileRecyclerview.setLayoutManager(new LinearLayoutManager(this));
@@ -168,7 +177,7 @@ public class ProfileActivity extends AppCompatActivity implements  IProfileView,
     @Override
     public void showConnectivityChangedMessage(String message)
     {
-        Snackbar.make(fab,message,Snackbar.LENGTH_LONG).show();
+        Snackbar.make(fab, message, Snackbar.LENGTH_LONG).show();
     }
 
     @Override
@@ -176,20 +185,20 @@ public class ProfileActivity extends AppCompatActivity implements  IProfileView,
     {
         switch (view.getId())
         {
-            case R.id.profile_fab :
+            case R.id.profile_fab:
             {
-                if(isGridMode)
+                if (isGridMode)
                 {
                     profilePresenter.onSelectedGridMode();
 
-                    isGridMode = false ;
+                    isGridMode = false;
                 }
 
                 else
                 {
                     profilePresenter.onSelectedListMode();
 
-                    isGridMode = true ;
+                    isGridMode = true;
                 }
 
                 break;
